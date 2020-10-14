@@ -7,8 +7,10 @@
 @import './components/lateralText';
 @import './components/footer';
 
-
 //Main pages
 @import './pages/about';
 @import './pages/projects';
 @import './pages/contact';
+
+//Responsive Design
+@import './abstracts/responsive';

@@ -1,0 +1,103 @@
+@import '../abstracts/functions';
+
+@media screen and (max-width: 768px) {
+    #aboutSection {
+        .about__container {
+            @include settingSectionStyle(450px, column-reverse, 100px, 0, 2rem, 5rem, 2rem);
+            .side__vertical__text {
+                display: none;
+            }
+            .about__textContainer {
+                padding: 1rem 0 0 .7rem;
+                .contacts {
+                    .socialContact {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    #projectSection {
+        .projects__container {
+            @include settingSectionStyle(450px, column, 100px, 0, 2rem, 5rem, 2rem);
+            .projects__intro {
+                margin-bottom: 5rem;
+                &:before {
+                    content: none;
+                }
+            }
+            .project {
+                flex-direction: column;
+                &::before {
+                    display: none;
+                }
+                .side__vertical__text {
+                    writing-mode: initial;
+                    transform: rotate(0deg);
+                    height: auto;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    width: inherit;
+                    margin-bottom: 3rem;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translate(5%, -50%);
+                        height: 1px;
+                        width: calc(100% - 190px);
+                        background-color: black;
+                    }
+                } 
+                .project__text {
+                    margin: 0;
+                    margin-top: 2rem;
+                }
+            }
+        }
+    }
+    #contactSection {
+        margin-top: -13rem;
+        .contact__container {
+            @include settingSectionStyle(450px, '', 100px, 0, 2rem, 5rem, 2rem);
+        }
+    }
+};
+
+@media screen and (max-width: 450px) {
+    .about__container {
+        @include settingSectionStyle(320px, '', 0, 0, 0, 0, 0);
+        /* max-width: 320px;
+        padding: 0 0 0 0; */
+    }
+    .projects__container {
+        @include settingSectionStyle(320px, '', 0, 0, 0, 0, 0);
+        .project {
+            .project__text {
+                min-width: 0;
+                .project__technologies {
+                    ul {
+                        flex-direction: column;
+                        li {
+                            line-height: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #contactSection {
+        .contact__container {
+            &::before {
+                content: none;
+            }
+            .contact__links {
+                .contact__socials {
+                    display: flex;
+                }
+            }
+        }
+    }
+};
