@@ -1,4 +1,10 @@
 @import './base/general';
 
 //Components
+@import './components/buttons';
+@import './components/socials';
 @import './components/navbar';
+@import './components/lateralText';
+
+//Main pages
+@import './pages/about';

@@ -1,0 +1,22 @@
+.lateralTextStyle {
+    position: relative;
+    left: -2%;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    font-size: 0.7em;
+    text-transform: uppercase;
+    font-weight: lighter;
+    letter-spacing: 10px;
+    height: 310px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 47%;
+        width: 1px;
+        background-color: black;
+    }
+}

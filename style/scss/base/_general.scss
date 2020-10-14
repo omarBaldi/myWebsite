@@ -35,6 +35,11 @@ a {
     color: black;
 }
 
+section {
+    min-height: 100vh;
+    @include flexbox(center, center, '');
+}
+
 .menu__hide {
     top: -80px;
 }
