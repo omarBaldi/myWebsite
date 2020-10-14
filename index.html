@@ -137,6 +137,22 @@
         </section>
 
     </main>
+
+    <!-- Footer (Copyright) -->
+    <footer>
+        <div class="footer__text">
+            <p>Designed & Built by Omar Baldi</p>
+            <p>Copyright &#169; <span id="yearCopyright"></span></p>
+        </div>
+    </footer>
+
+    <script>
+        /* Dynamic Year for copyright */
+        const yearDOM = document.getElementById('yearCopyright');
+        const date = new Date();
+        const currentYear = date.getFullYear();
+        yearDOM.innerText = currentYear;
+    </script>
     
 </body>
 </html>
