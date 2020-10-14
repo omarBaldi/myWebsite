@@ -24,15 +24,22 @@ function clickHamburger() {
     if (!isMenuMobileOpen) {
         menuMobile.classList.add(openMobileClass);
         menuMobileFullpage.classList.add(openMobileClass);
+        changeLogo('../images/logoBlack.png', 100);
     } else {
         menuMobile.classList.remove(openMobileClass);
         menuMobileFullpage.classList.remove(openMobileClass);
+        changeLogo('../images/logoWhite.png', 300);
     }
     isMenuMobileOpen = !isMenuMobileOpen;
 }
 
+function changeLogo(currentImage, time) {
+    setTimeout(() => {
+        document.querySelector('.menu__logo img').src = currentImage;
+    }, time)
+};
+
 function scrollCheck() {
-    console.log("scroll")
     const currentScrollPosition = window.pageYOffset;
 
     if (currentScrollPosition > previousScrollPosition) {

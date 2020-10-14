@@ -5,7 +5,7 @@
     .contact__container {
         @include settingSectionStyle(1000px, column, 0, 0, 3rem, 0, 3rem);
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1.1em;
         position: relative;
         &::before {
             content: 'con- \A -tact \A me';

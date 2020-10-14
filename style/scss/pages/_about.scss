@@ -9,7 +9,7 @@
     }
     .about__textContainer {
         z-index: 100;
-        font-size: 1.2em;
+        font-size: 1.1em;
         padding-left: 2rem;
         padding-right: 2rem;
         .description {
@@ -22,7 +22,7 @@
             }
             h1 {
                 text-transform: uppercase;
-                font-size: 2.2em;
+                font-size: 2em;
                 letter-spacing: 1px;
                 margin-bottom: -2%;
                 margin-bottom: 10px;
@@ -42,7 +42,7 @@
         }
     }
     .about__imgContainer {
-        max-width: 390px;
+        max-width: 380px;
         position: relative;
         &::before {
             content: '';
