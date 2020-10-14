@@ -1,0 +1,26 @@
+.intro__page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    z-index: 9999;
+    @include flexbox(center, center, column);
+    transform-origin: top;
+    img {
+        max-width: 150px;
+        opacity: 0;
+    }
+    h3 {
+        opacity: 0;
+        font-family: $secondary-font-style;
+        margin-top: 1rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-size: 1em;
+        position: relative;
+        @include flexbox(center, '', '');
+    }
+}
