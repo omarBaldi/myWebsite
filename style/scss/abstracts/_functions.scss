@@ -1,0 +1,40 @@
+@mixin flexbox($jf, $ai, $direction) {
+    display: flex;
+    justify-content: $jf;
+    align-items: $ai;
+    flex-direction: $direction;
+}
+
+@mixin menuLinksEffectHover($y) {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: calc(100% + 10px);
+    background-color: inherit;
+    transform: translateY($y);
+    transition: all .3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+};
+
+@mixin buttonResumeStyle($device) {
+    line-height: normal;
+    border-radius: 5px;
+    
+    @if $device == 'laptop' {
+        border: 1px solid black;
+        padding: 10px;
+    } @else {
+        padding: 15px;
+        margin-top: 5rem;
+        border: 1px solid white;
+        position: relative;
+        @include flexbox(center, flex-start, '');
+        &::before {
+            content: '';
+            position: absolute;
+            top: -4rem;
+            height: 1px;
+            width: 40%;
+            background-color: white;
+        }
+    }
+};

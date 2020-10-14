@@ -1,0 +1,44 @@
+@import '../base/font';
+@import '../abstracts/functions';
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    font-family: $primary-font-style;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu__hide {
+    top: -80px;
+}
+  
+.menu__show {
+    top: 0;
+}
