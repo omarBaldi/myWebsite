@@ -1,0 +1,51 @@
+
+
+#contactSection {
+    overflow: hidden;
+    .contact__container {
+        @include settingSectionStyle(1000px, column, 0, 0, 3rem, 0, 3rem);
+        text-align: center;
+        font-size: 1.2em;
+        position: relative;
+        &::before {
+            content: 'con- \A -tact \A me';
+            white-space: pre;
+            position: absolute;
+            font-size: 15em;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 190px;
+            color: #f1f2f6cc;
+            z-index: -1;
+            letter-spacing: -15px;
+        }
+        .contact__text {
+            margin-bottom: 2rem;
+            h1 {
+                font-size: 2em;
+                font-weight: bold;
+                font-family: $secondary-font-style;
+            }
+            p {
+                line-height: 30px;
+                margin-top: 1.2rem;
+            }
+        }
+        .contact__links {
+            .contact__buttons {
+                @include flexbox('', '', '');
+                .contact__button__email {
+                    @extend .ContactButtonStyle;
+                }
+            }
+            .contact__socials {
+                margin-top: 1.5rem;
+                @include flexbox(center, '', '');
+                /* display: flex;
+                justify-content: center; */
+                display: none;
+                @extend .socialContactsClass;
+            }
+        }
+    }
+}
