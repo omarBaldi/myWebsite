@@ -4,7 +4,71 @@ const menuMobileFullpage = document.querySelector('.menu__mobile__fullPage')
 const menuLaptop = document.querySelector('.menu__links__laptop');
 const menuLinks = document.querySelectorAll('.menu__mobile__fullPage ul li');
 
-class Menu {
+const openMobileClass = 'openMobile';
+const showMenuClass = 'menu__show';
+const hideMenuClass = 'menu__hide';
+let isMenuMobileOpen = false;
+let previousScrollPosition = window.pageYOffset;
+
+function checkMobileMenu() {
+    if (window.innerWidth <= 768) {
+        menuLaptop.style.display = 'none';
+        menuMobile.style.display = 'flex'; 
+    } else {
+        menuLaptop.style.display = 'flex';
+        menuMobile.style.display = 'none'; 
+    }
+};
+
+function clickHamburger() {
+    if (!isMenuMobileOpen) {
+        menuMobile.classList.add(openMobileClass);
+        menuMobileFullpage.classList.add(openMobileClass);
+    } else {
+        menuMobile.classList.remove(openMobileClass);
+        menuMobileFullpage.classList.remove(openMobileClass);
+    }
+    isMenuMobileOpen = !isMenuMobileOpen;
+}
+
+function scrollCheck() {
+    console.log("scroll")
+    const currentScrollPosition = window.pageYOffset;
+
+    if (currentScrollPosition > previousScrollPosition) {
+        hide();
+    } else {
+        show();
+    }
+
+    previousScrollPosition = currentScrollPosition;
+}
+function show() {
+    if (nav.classList.contains(hideMenuClass)) {
+        nav.classList.remove(hideMenuClass);
+    }
+    nav.classList.add(showMenuClass);
+}
+
+function hide() {
+    if (nav.classList.contains(showMenuClass)) {
+        nav.classList.remove(showMenuClass);
+    }
+    nav.classList.add(hideMenuClass);
+}
+
+
+checkMobileMenu();
+window.onresize = () => checkMobileMenu();
+window.onscroll = () => scrollCheck();
+menuMobile.addEventListener('click', () => clickHamburger());
+menuLinks.forEach(link => link.addEventListener('click', () => clickHamburger()));
+
+
+
+
+
+/* class Menu {
     static isMenuMobileOpen = false;
     static openMobileClass = 'openMobile';
     static showMenuClass = 'menu__show';
@@ -64,4 +128,4 @@ class Menu {
 };
 
 
-Menu.start();
+Menu.start(); */
