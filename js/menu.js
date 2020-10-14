@@ -60,7 +60,7 @@ function hide() {
 
 checkMobileMenu();
 window.onresize = () => checkMobileMenu();
-window.onscroll = () => scrollCheck();
+//window.onscroll = () => scrollCheck();
 menuMobile.addEventListener('click', () => clickHamburger());
 menuLinks.forEach(link => link.addEventListener('click', () => clickHamburger()));
 
