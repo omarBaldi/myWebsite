@@ -8,11 +8,11 @@ const projects = [
         links: [
             {
                 icon: 'fab fa-github',
-                href: '#'
+                href: 'https://github.com/omarBaldi/Typt'
             },
             {
                 icon: 'fas fa-external-link-alt',
-                href: '#'
+                href: 'https://typt.herokuapp.com/'
             },
         ]
     },
