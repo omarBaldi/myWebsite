@@ -35,7 +35,7 @@ const projects = [
     {
         image: '../images/projects/covid_tracker.png',
         title: 'Covid-19 Tracker', 
-        description: 'This web application has been built with the purpose of improving your typing skills with 3 different level of difficulties and multiple challenges to test your speed. Gaining starts to advance to the most advanced levels.', 
+        description: 'A graphic representation of the COVID virus using different and reactive charts with an intuitive and fresh design. It shows for every country the trend for the people infected, recovered and death.',
         technologies: ['Vue', 'Vuetify', 'Covid19-API', 'Highcharts'], 
         links: [
             {

@@ -5,7 +5,7 @@
     .contact__container {
         @include settingSectionStyle(1000px, column, 0, 0, 3rem, 0, 3rem);
         text-align: center;
-        font-size: 1.1em;
+        font-size: 1.2em;
         position: relative;
         &::before {
             content: 'con- \A -tact \A me';
@@ -22,7 +22,7 @@
         .contact__text {
             margin-bottom: 2rem;
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
                 font-weight: bold;
                 font-family: $secondary-font-style;
             }
@@ -41,8 +41,6 @@
             .contact__socials {
                 margin-top: 1.5rem;
                 @include flexbox(center, '', '');
-                /* display: flex;
-                justify-content: center; */
                 display: none;
                 @extend .socialContactsClass;
             }

@@ -9,6 +9,7 @@
             }
             .about__textContainer {
                 padding: 1rem 0 0 .7rem;
+                font-size: 1em;
                 .contacts {
                     .socialContact {
                         display: none;
@@ -61,7 +62,13 @@
     #contactSection {
         margin-top: -13rem;
         .contact__container {
+            font-size: 1em;
             @include settingSectionStyle(450px, '', 100px, 0, 2rem, 5rem, 2rem);
+            .contact__text {
+                h1 {
+                    font-size: 1.9em;
+                }
+            }
         }
     }
 };
