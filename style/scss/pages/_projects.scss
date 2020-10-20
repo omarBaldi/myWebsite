@@ -2,6 +2,7 @@
 
 .projects__container {
     @include settingSectionStyle(1000px, column, 10%, 0, 3rem, 0, 3rem);
+    overflow: hidden;
     .projects__intro {
         width: 100%;
         margin-bottom: 9rem;
@@ -20,7 +21,7 @@
     .project {
         @include flexbox(flex-end, center, '');
         position: relative;
-        margin: 0 2rem 10rem 2rem;
+        margin: 0 2rem 15rem 2rem;
         width: 100%;
         .side__vertical__text {
             @extend .lateralTextStyle;

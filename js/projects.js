@@ -4,7 +4,7 @@ const projects = [
         image: '../images/projects/Typing_application.png',
         title: 'Typt', 
         description: 'This web application has been built with the purpose of improving your typing skills with 3 different level of difficulties and multiple challenges to test your speed. Gaining starts to advance to the most advanced levels.', 
-        technologies: ['Vue', 'Node_JS', 'Express', 'Vuetify', 'Passport_auth'], 
+        technologies: ['Vuetify', 'Node_JS', 'Express', 'Vue', 'Passport_auth', 'MongoDB'], 
         links: [
             {
                 icon: 'fab fa-github',
@@ -128,6 +128,4 @@ function createProjectsCards() {
 
     }
 }
-
 createProjectsCards();
-

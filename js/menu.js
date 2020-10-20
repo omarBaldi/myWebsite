@@ -11,6 +11,7 @@ let isMenuMobileOpen = false;
 let previousScrollPosition = window.pageYOffset;
 
 function checkMobileMenu() {
+
     if (window.innerWidth <= 768) {
         menuLaptop.style.display = 'none';
         menuMobile.style.display = 'flex'; 
