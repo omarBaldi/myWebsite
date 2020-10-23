@@ -51,3 +51,72 @@
         }
     }
 };
+
+@mixin socialIconsStyle($colorIcon) {
+    ul {
+        display: flex;
+        margin-bottom: 3rem;
+        li {
+            padding: 12px;
+            i {
+                color: $colorIcon;
+                cursor: pointer;
+                transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                font-size: 1.1em;
+                &:hover {
+                    transform: scale(1.4);
+                }
+            }
+        }
+    }
+}
+
+@mixin buttonContactStyle($sectionName) {
+    display: inline-block;
+    padding: 20px;
+    cursor: pointer;
+    background-color:black;
+    border: 1px solid white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8em;
+    position: relative;
+    border-radius: 3px;
+    transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    a {
+        color: white;
+        i {
+            margin-right: 5px;
+        }
+    }
+    &:hover {
+        background-color: white;
+        @if $sectionName == 'about' {
+            border: 1px solid black;
+        } @else {
+            border: 1px solid white;
+        }
+        a {
+            color: black;
+        }
+    }
+}
+
+@mixin triangles($side) {
+    content: '';
+    position: absolute;
+    background-color: white;
+    border: 2px solid transparent;
+    backface-visibility: hidden;
+    width: 50%;
+    height: 220px;
+    /* height: 150px; */
+    top: -110px;
+    @if $side == 'left' {
+        left: -1px;
+        transform: skewY(17deg);
+    } @else {
+        right: -5px;
+        transform: skewY(-17deg);
+    }
+}

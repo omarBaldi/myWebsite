@@ -1,9 +1,16 @@
-
-
 #contactSection {
     overflow: hidden;
+    position: relative;
+    background-color: black;
+    color: #ffff;
+    &::before {
+        @include triangles('left');
+    }
+    &::after {
+        @include triangles('right');
+    }
     .contact__container {
-        @include settingSectionStyle(1000px, column, 0, 0, 3rem, 0, 3rem);
+        @include settingSectionStyle(1000px, column, 3rem, 0, 3rem, 0, 3rem);
         text-align: center;
         font-size: 1.2em;
         position: relative;
@@ -21,6 +28,7 @@
         }
         .contact__text {
             margin-bottom: 2rem;
+            padding-top: 5rem;
             h1 {
                 font-size: 2.2em;
                 font-weight: bold;
@@ -35,14 +43,14 @@
             .contact__buttons {
                 @include flexbox('', '', '');
                 .contact__button__email {
-                    @extend .ContactButtonStyle;
+                    @include buttonContactStyle('contact');
                 }
             }
             .contact__socials {
                 margin-top: 1.5rem;
                 @include flexbox(center, '', '');
                 display: none;
-                @extend .socialContactsClass;
+                @include socialIconsStyle(white);
             }
         }
     }
