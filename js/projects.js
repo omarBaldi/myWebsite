@@ -47,6 +47,22 @@ const projects = [
                 href: 'https://coviddatatracker.netlify.app/'
             },
         ]
+    },
+    {
+        image: '../images/projects/github_userFinder.png',
+        title: 'Github-userFinder', 
+        description: 'This application allows you to search every GitHub user and display his informations as well as his personal repositories and their respective commits using the power of GraphQL combined with the GitHub API.',
+        technologies: ['Vue', 'Vuetify', 'Apollo', 'GraphQL', 'GitHub API'], 
+        links: [
+            {
+                icon: 'fab fa-github',
+                href: 'https://github.com/omarBaldi/githubUserFinder'
+            },
+            {
+                icon: 'fas fa-external-link-alt',
+                href: 'https://githubuserfinderrr.netlify.app/'
+            },
+        ]
     }
 ];
 
