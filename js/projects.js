@@ -66,81 +66,84 @@ const projects = [
     }
 ];
 
+function createElement(type, attrs = {}) {
+    const newElement = document.createElement(type);
+    for (let attr in attrs) {
+        const value = attrs[attr];
+        newElement.setAttribute(attr, value)
+    }
+
+    return newElement
+};
+
 function createProjectsCards() {
     for (let [index, project] of projects.entries()) {
 
-        //Create number container
-        const projectNumber = document.createElement('h4');
-        projectNumber.className = 'side__vertical__text';
         const currentIndex = (index + 1).toString();
         const paddingZerosFormat = currentIndex.padStart(4 - currentIndex.length, "0");
-        projectNumber.innerText = `Proj #${paddingZerosFormat}`;
 
-        //Create Image container
-        const projectImageDOM = document.createElement('div');
-        projectImageDOM.className = 'project__image';
-        const image = document.createElement('img');
-        image.src = project.image;
-        /* image.setAttribute('href', project.links[0].href); */
-        projectImageDOM.appendChild(image);
+        const createProjectNumber = () => {
+            const number = createElement('h4', { class: 'side__vertical__text', 'data-text': `Proj #${paddingZerosFormat}` });
+            return number
+        };
 
+        const createImage = () => {
+            const imageContainer = createElement('div', { class: 'project__image' });
+            const image = createElement('img', { src: project.image });
+            imageContainer.appendChild(image);
+            return imageContainer
+        };
 
-                        //Create title/subtitle
-                        const projectTitleDOM = document.createElement('div');
-                        projectTitleDOM.className = 'project__title';
-                        const subtitle = document.createElement('h4');
-                        subtitle.innerText = 'Featured Project'
-                        const title = document.createElement('h1');
-                        title.innerText = project.title;
-                        projectTitleDOM.append(subtitle, title);
+        const createTitle = () => {
+            const titleContainer = createElement('div', { class: 'project__title' });
+            const subtitle = createElement('h4', { 'data-text': 'Featured Project' });
+            const title = createElement('h1', { 'data-text': project.title }); 
+            titleContainer.append(subtitle, title);
+            return titleContainer
+        };
 
-                        //Create description
-                        const projectDescriptionDOM = document.createElement('div');
-                        projectDescriptionDOM.className = 'project__description';
-                        const description = document.createElement('p');
-                        description.innerText = project.description;
-                        projectDescriptionDOM.append(description);
+        const createDescription = () => {
+            const descriptionContainer = createElement('div', { class: 'project__description' });
+            const description = createElement('p', { 'data-text': project.description });
+            descriptionContainer.appendChild(description);
+            return descriptionContainer
+        };
 
-                        //Create technologies
-                        const projectTechnologiesDOM = document.createElement('div');
-                        projectTechnologiesDOM.className = 'project__technologies';
-                        const ul = document.createElement('ul');
-                        project.technologies.forEach((technology, indexTechnology) => {
-                            const li = document.createElement('li');
-                            li.innerText = technology;
-                            ul.appendChild(li);
-                        });
-                        projectTechnologiesDOM.appendChild(ul);
+        const createTechnologies = () => {
+            const technologiesContainer = createElement('div', { class: 'project__technologies' });
+            const ulTechnologies = createElement('ul');
+            project.technologies.forEach(technology => {
+                const liTechnology = createElement('li', { 'data-text': technology });
+                ulTechnologies.appendChild(liTechnology);
+            });
+            technologiesContainer.appendChild(ulTechnologies);
+            return technologiesContainer
+        };
 
-                        //Create links
-                        const projectLinksDOM = document.createElement('div');
-                        projectLinksDOM.className = 'project__links';
-                        project.links.forEach(link => {
-                            const icon = document.createElement('i');
-                            icon.className = link.icon;
-                            const a = document.createElement('a');
-                            a.appendChild(icon);
-                            a.setAttribute('href', link.href);
-                            a.target = '_blank';
-                            projectLinksDOM.appendChild(a);
-                        });
+        const createLinks = () => {
+            const linksContainer = createElement('div', { class: 'project__links' });
+            project.links.forEach(link => {
+                const iconLink = createElement('i', { class: link.icon });
+                const hrefLink = createElement('a', { href: link.href, target: '_blank' });
+                hrefLink.appendChild(iconLink);
+                linksContainer.appendChild(hrefLink);
+            });
+            return linksContainer
+        };
 
-       
-        //Create Text container
-        const projectTextDOM = document.createElement('div');
-        projectTextDOM.className = 'project__text';
-        projectTextDOM.append(projectTitleDOM, projectDescriptionDOM, projectTechnologiesDOM, projectLinksDOM);
+        const createTextContainer = () => {
+            const projectTextDOM = createElement('div', { class: 'project__text' });
+            projectTextDOM.append(createTitle(), createDescription(), createTechnologies(), createLinks());
+            return projectTextDOM
+        };
 
+        const createProject = () => {
+            const projectDOM = createElement('div', { 'data-project-number': paddingZerosFormat, class: 'project'});
+            projectDOM.append(createProjectNumber(), createImage(), createTextContainer());
+            return projectDOM
+        };
 
-         //Create project container
-         const projectDOM = document.createElement('div');
-         //projectDOM.setAttribute('data-project-number', project.title);
-         projectDOM.setAttribute('data-project-number', paddingZerosFormat);
-         projectDOM.className = 'project';
-         projectDOM.append(projectNumber, projectImageDOM, projectTextDOM);
-
-        //Append in parent container
-        projectContainer.appendChild(projectDOM);
+        projectContainer.appendChild(createProject());
 
     }
 }

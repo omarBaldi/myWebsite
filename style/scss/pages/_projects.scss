@@ -57,13 +57,24 @@
                     font-family: $secondary-font-style;
                     margin-bottom: 5px;
                     letter-spacing: 2px;
+                    &::before {
+                        content: attr(data-text);
+                    }
                 }
                 h1 {
                     margin-bottom: 1rem;
+                    &::before {
+                        content: attr(data-text);
+                    }
                 }
             }
             .project__description {
                 line-height: 25px;
+                p {
+                    &::before {
+                        content: attr(data-text);
+                    }
+                }
             }
             .project__technologies {
                 position: relative;
@@ -75,11 +86,14 @@
                     li {
                         padding-left: 20px;
                         float: right;
+                        &::before {
+                            content: attr(data-text);
+                        }
                     }
                 }
             }
             .project__links {
-                margin-right: 5px;
+                margin-right: 10px;
                 a {
                     font-size: 1.1em;
                     padding: 0 0 0 20px;
